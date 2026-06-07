@@ -1,0 +1,29 @@
+
+{
+  "name": "arturgomme-desktop",
+  "version": "1.0.0",
+  "description": "Gestionale officina desktop Electron + React + PostgreSQL",
+  "main": "electron/main.js",
+  "author": "Artur",
+  "license": "ISC",
+  "scripts": {
+    "build:ui": "npm --prefix frontend install && npm --prefix frontend run build",
+    "start": "npm run build:ui && electron .",
+    "make": "npm run build:ui && electron-builder"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "electron": "^30.0.0",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "arturgomme.desktop",
+    "productName": "Artur Gomme",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
